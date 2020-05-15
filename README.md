@@ -14,6 +14,6 @@
 * [Node with React: Fullstack Web Development ](https://www.udemy.com/course/node-with-react-fullstack-web-development/?ranMID=39197&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-Lgo3s_T8MZZ.yvPv.WRLjw&LSNPUBID=TnL5HPStwNw)
 * [Angular & NodeJS – The MEAN Stack Guide](https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/?ranMID=39197&ranEAID=TnL5HPStwNw&ranSiteID=TnL5HPStwNw-bv9K3TPPJx8nEjz.PwKCoQ&LSNPUBID=TnL5HPStwNw)
 
-# Матеріал підготували студенти групи ІВ-81:
+## Матеріал підготували студенти групи ІВ-81:
 * **Зікратий Дмитро** - [shooterdimon](https://github.com/shooterdimon)
 * **Тріщук Денис** - [krissayrose](https://github.com/krissayrose)
