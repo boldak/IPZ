@@ -99,9 +99,7 @@ package.json
 {
   "name": "Test",
   "version": "1.0.0",
-  "dependencies": {
-    "lodash": "^4.17.15"
-  }
+  "dependencies": {}
 }
 ```
 
