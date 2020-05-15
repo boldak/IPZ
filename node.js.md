@@ -289,6 +289,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -305,6 +306,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -321,6 +323,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -337,6 +340,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -353,6 +357,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -369,6 +374,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -385,6 +391,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -401,6 +408,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
@@ -417,6 +425,7 @@ package.json
 
 **Результат**:
 
+package.json
 ``` node.js
 {
   "name": "untitled",
