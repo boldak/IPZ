@@ -164,6 +164,8 @@ package.json
 
 У Windows це може бути щось на зразок `C:\Users\YOU\AppData\Roaming\npm\node_modules`.
 
+**Наприклад**: на моєму комп'ютері це `C:\Users\Denny\AppData\Roaming\npm\node_modules`.
+
 ## Файл package.json
 
 Файл package.json є найважливішим елементом безлічі проектів, заснованих на екосистемі Node.js. 
