@@ -555,8 +555,116 @@ $ git commit -m "New commit"
 
 `$ git commit -am "New commit"`
 
+### Видаляємо файли
 
+Щоб видалити файл з Git, вам треба прибрати його з контрольованих файлів (вірніше, 
+видалити його з вашого індексу) та створити коміт. Команда git rm це робить, а також 
+видаляє файл з вашої робочої директорії, щоб наступного разу він не відображався неконтрольованим.
 
+Якщо ви просто видалите файл з вашої робочої директорії, він з’явиться під заголовком 
+“Changes not staged for commit” (тобто, неіндексованим) виводу команди `git status`:
+
+```
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+        modified:   main.py
+        deleted:    requirements.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../../.gitignore
+        ../.gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+Потім, якщо ви виконаєте git rm, файл буде індексованим на видалення:
+
+```
+$ git rm requirements.txt
+rm 'venv/Include/requirements.txt'
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    requirements.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+        modified:   main.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../../.gitignore
+        ../.gitignore
+```
+
+Наступного разу, коли ви створите коміт, файл зникне та більше не буде контрольованим. 
+Якщо ви редагували файл та вже додали його до індексу, ви маєте примусово видалити його за 
+допомогою опції `-f`. Це захід безпеки, щоб завадити випадковому видаленню даних, які ви не 
+записали до знімку, і тому вони не можуть бути відновлені Git.
+
+Інша корисна річ, яку ви можливо захочете зробити, це зберегти файл у робочій директорії, 
+проте видалити його з індексу. Іншими словами, ви можете забажати зберегти файл на диску, 
+проте більше не контролювати його Git. Це може бути корисним, якщо ви забули щось додати до 
+свого файлу `.gitignore` та випадково проіндексували, наприклад великий файл журнал чи купу 
+скомпільованих файлів .a. Щоб це зробити, скористайтеся опцією `--cached`:
+
+```
+$ git rm --cached README.md
+rm 'venv/Include/README.md
+```
+
+Ви можете передавати команді `git rm` файли, директорії або файлові ґлоб шаблони. 
+Це означає, що ви можете зробити щось таке:
+
+`$ git rm log/\*.log`
+
+Зверніть увагу на зворотну похилу (\\) попереду `*`. Вона необхідна адже Git має власне 
+розкриття шаблону на додаток до розкриття шаблону вашої оболонки. Ця команда видаляє всі файли, 
+що мають `.log` розширення та знаходяться в директорії `log/`. Або, ви можете зробити щось таке:
+
+`$ git rm \*~`
+
+Ця команда видаляє всі файли, чиї назви закінчуються на `~`.
+
+### Переміщення файлів
+
+На відміну від багатьох інших СКВ, Git явно не стежить за переміщенням файлів. Якщо ви перейменуєте 
+файл у Git, ніяких метаданих про це не буде збережено.
+
+Якщо ви бажаєте перейменувати файл у Git, ви можете використати команду `git mv` :
+
+`$ git mv стара_назва нова_назва`
+
+Насправді, якщо ви виконаєте це і подивитесь на статус, ви побачите, що Git вважає, що перейменував файл:
+
+```
+$ git mv README.md README
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    renamed:    README.md -> README
+```
 
 
 
