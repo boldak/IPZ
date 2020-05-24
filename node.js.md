@@ -473,3 +473,7 @@ package-lock.json
   }
 }
 ```
+
+## Матеріал підготували студенти групи ІВ-81:
+* **Зікратий Дмитро** - [shooterdimon](https://github.com/shooterdimon)
+* **Тріщук Денис** - [krissayrose](https://github.com/krissayrose)
