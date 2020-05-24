@@ -852,3 +852,85 @@ $ git commit -m 'The initial commit of my project'
 
 ### Створення нової гілки
 
+Що відбувається, якщо ви створюєте нову гілку? Ну, це створює новий вказівник, щоб ви могли пересуватися. 
+Припустімо, ви створюєте нову гілку під назвою `testing`. Ви це робите за допомогою команди `git branch`:
+
+`$ git branch testing`
+
+Це створює новий вказівник на фіксацію, в якій ви зараз знаходитесь.
+
+![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/testing_branch.png)
+
+Звідки Git знає, на якій гілці ви зараз знаходитесь? Він зберігає особливий вказівник під назвою `HEAD`.
+У Git це вказівник на локальну гілку, на якій ви знаходитесь. В даному випадку, ви досі на гілці 
+`master`. Команда `git branch` тільки створює нову гілку — вона не переключає на цю гілку.
+
+![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/HEAD.png)
+
+Ви легко можете це побачити за допомогою простої опції команди git log, що може показати куди вказують 
+вказівники гілок. Ця опція називається `--decorate`, також використаємо `--oneline` для короткого 
+відображення:
+
+```
+$ git log --oneline --decorate
+f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to the central interface
+34ac2 Fixed bug #1328 - stack overflow under certain conditions
+98ca9 The initial commit of my project
+```
+Як бачите, гілки `master` та `testing` прямо поруч з фіксацією `f30ab`.
+
+### Переключення гілок
+
+Щоб переключитися на існуючу гілку, треба виконати команду `git checkout`. Переключімося на нову 
+гілку `testing`:
+
+`$ git checkout testing`
+
+Це пересуває `HEAD`, щоб він вказував на гілку `testing`.
+
+![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_testing.png)
+
+Давайте зробимо ще одну фіксацію:
+
+`$ git commit -am "Зробив зміни"`
+
+![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_testing_new_commit.png)
+
+Це цікаво, бо тепер ваша гілка `testing` пересунулась уперед, а ваша гілка `master` досі вказує 
+на фіксацію, що й у момент виконання git checkout для переключення гілок. Повернімося назад 
+до гілки `master`:
+
+`$ git checkout master`
+
+![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_master.png)
+
+Ця команда зробила дві речі. Вона пересунула вказівник `HEAD` назад на гілку `master`, та повернула файли 
+у вашій робочій теці до стану знімку, на який вказує `master`. Це також означає, що якщо ви зараз зробите 
+нові зміни, вони будуть походити від ранішої версії проекту.
+
+Зробимо декілька змін та знову зафіксуємо:
+
+`$ git commit -am "Зробив інші зміни"`
+
+Тепер історія вашого проекту розбіглася (`diverged`) (дивіться Історія, що розбіглася). Ви створили 
+гілку, дещо в ній зробили, переключились на головну гілку та зробили там щось інше. Обидві зміни 
+ізольовані в окремих гілках. Ви можете переключатись між цими гілками та злити їх, коли вони будуть 
+готові. І все це ви зробили за допомогою простих команд `branch`, `checkout` та `commit`.
+
+![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_master_new_commit.png)
+
+Ви також можете легко це побачити за допомогою команди `git log`. Якщо ви виконаєте 
+`git log --oneline --decorate --graph --all`, вона надрукує історію ваших фіксацій, 
+покаже куди вказують ваші гілки та як розбіглася ваша історія.
+```
+$ git log --oneline --decorate --graph --all
+* c2b9e (HEAD, master) Зробив інші зміни
+| * 87ab2 (testing) Зробив зміни
+|/
+* f30ab add feature #32 - ability to add new formats to the
+* 34ac2 fixed bug #1328 - stack overflow under certain conditions
+* 98ca9 initial commit of my project
+```
+
+Оскільки гілка в Git — це насправді простий файл, що містить 50 символів контрольної суми SHA-1 
+коміту, на який вказує, гілки дешево створювати та знищувати.
