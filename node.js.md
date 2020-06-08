@@ -42,7 +42,7 @@ added 1 package from 2 contributors and audited 1 package in 3.349s
 found 0 vulnerabilities
 ```  
 package-lock.json
-``` node.js
+```json
 {
   "requires": true,
   "lockfileVersion": 1,
@@ -56,7 +56,7 @@ package-lock.json
 }
 ```  
 package.json
-``` node.js
+```json
 {
   "name": "Test",
   "version": "1.0.0",
@@ -71,7 +71,7 @@ package.json
 * Прапор `--save-dev` дозволяє встановити пакет і додати запис про нього в розділ, що містить перелік залежностей розробки (тобто - пакетів, які потрібні в ході розробки проекту, на зразок бібліотек для тестування, але не потрібні для його роботи) файлу package. json, який називається devDependencies. **Наприклад**:
 
 package.json  
-``` node.js
+```json
 {
   "name": "modulesapp",
   "version": "1.0.0",
@@ -89,7 +89,7 @@ package.json
 Якщо в проекті є файл package.json, **наприклад**:
 
 package.json  
-``` node.js
+```json
 {
   "name": "modulesapp",
   "version": "1.0.0",
@@ -119,13 +119,13 @@ removed 1 package in 0.82s
 found 0 vulnerabilities
 ```  
 package-lock.json
-``` node.js
+```json
 {
   "lockfileVersion": 1
 }
 ```  
 package.json
-``` node.js
+```json
 {
   "name": "Test",
   "version": "1.0.0",
@@ -185,7 +185,7 @@ Package.json є чимось на зразок файлу-маніфесту д�
 * browserlist - використовується для зберігання списку браузерів (і їх версій), які має підтримувати додаток.
 
 Дедальніше на прикладі package.json
-``` node.js
+```json
 {
   "name": "project",
   "version": "1.0.0",
@@ -239,7 +239,7 @@ Package.json є чимось на зразок файлу-маніфесту д�
 
 ### Властивість dependencies містить список npm-пакетів, встановлених у вигляді залежностей пакета:
 
-``` node.js  
+```json  
   "dependencies": {
     "lodash": "^4.17.15"
   }
@@ -257,7 +257,7 @@ Package.json є чимось на зразок файлу-маніфесту д�
 
 Зверніть увагу, що у значення цієї властивості є префікс github. Npm підтримує префікси. Можна задати і в явному вигляді:
 
-``` node.js
+```json
 "repository": {
    "type": "git",
    "url": "https://github.com/lodash/lodash"
@@ -275,7 +275,7 @@ Package.json є чимось на зразок файлу-маніфесту д�
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -292,7 +292,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -309,7 +309,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -326,7 +326,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -343,7 +343,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -360,7 +360,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -377,7 +377,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -394,7 +394,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -411,7 +411,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -428,7 +428,7 @@ package.json
 **Результат**:
 
 package.json
-``` node.js
+```json
 {
   "name": "untitled",
   "version": "1.0.0",
@@ -458,7 +458,7 @@ package.json
 Версії залежностей будуть оновлені в package-lock.json після виконання команди `npm update`. У кожного файл package-lock.json є поле version, є поле resolved, яке вказує на розташування пакета, і строкове властивість integrity, яке можна використовувати для перевірки цілісності пакету.
 
 package-lock.json
-``` node.js
+```json
 {
   "name": "project",
   "version": "1.0.0",
