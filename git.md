@@ -479,7 +479,7 @@ index e69de29..5ab2f8a 100644
 +++ b/venv/Include/README.md
 @@ -0,0 +1 @@
 +Hello                          //Рядок, що був доданий
-\ No newline at end of file
+\No newline at end of file
 diff --git a/venv/Include/main.py b/venv/Include/main.py
 index eb7d7e7..d984313 100644
 --- a/venv/Include/main.py
@@ -489,7 +489,7 @@ index eb7d7e7..d984313 100644
 
  print("")
 +print()                        //Рядок, що був доданий
-\ No newline at end of file
+\No newline at end of file
 ```
 Ця команда порівнює вашу робочу директорію з індексом. Результат 
 показує вам зміни, котрі ви зробили проте не індексували.
@@ -508,7 +508,7 @@ index 1729b7a..eb7d7e7 100644
 
  print("")
 -print("")
-\ No newline at end of file
+\No newline at end of file
 diff --git a/venv/Include/requirements.txt b/venv/Include/requirements.txt
 new file mode 100644
 index 0000000..296d654
@@ -516,7 +516,7 @@ index 0000000..296d654
 +++ b/venv/Include/requirements.txt
 @@ -0,0 +1 @@
 +numpy
-\ No newline at end of file
+\No newline at end of file
 ```
 Важливо пам’ятати, що команда `git diff` без опцій не відображає всіх змін з останнього коміту — тільки 
 неіндексовані зміни. Якщо ви проіндексували всі свої зміни, вивід `git diff` буде порожнім.
