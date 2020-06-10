@@ -66,7 +66,7 @@ Git має три основних стани, в яких можуть пере
 Ви можете завантажити GitHub для Windows за адресою http://windows.github.com.
 Інтерфейс цього застосунку можна побачити нижче.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/github_desktop.png)
+![](./images/github_desktop.png)
 
 ### Налаштування ім’я користувача
 
@@ -209,7 +209,7 @@ Unpacking objects: 100% (5/5), done.
 останньому знімку та не існують у вашому індексі. Якщо ви щойно зробили клон репозиторія, усі ваші 
 файли контрольовані та не змінені, адже Git щойно їх отримав, а ви нічого не редагували.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/cycle_changing_status.png)
+![](./images/cycle_changing_status.png)
 
 ### Перевірка статусу ваших файлів
 Щоб дізнатись, в якому стані ваші файли, варто скористатись командою `git status`. Якщо ви виконаєте 
@@ -838,17 +838,17 @@ $ git commit -m 'The initial commit of my project'
 одне дерево, що перелічує зміст теки та вказує, які файли зберігаються у яких блобах, та одну фіксацію, 
 що вказує на корінь дерева, та зберігає метадані фіксації.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/tree_blobs.png)
+![](./images/tree_blobs.png)
 
 Якщо ви зробите якісь зміни та зафіксуєте знову, наступна фіксація буде зберігати вказівник на попередню.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/commit_parents.png)
+![](./images/commit_parents.png)
 
 Гілка в Git це просто легкий вказівник, що може пересуватись, на одну з цих фіксацій. Загальноприйнятим 
 ім’ям першої гілки в Git є `master`. Коли ви почнете робити фіксації, вам надається гілка `master`, 
 що вказує на останню зроблену фіксацію. Щоразу ви фіксуєте, вона переміщується вперед автоматично.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/branch.png)
+![](./images/branch.png)
 
 ### Створення нової гілки
 
@@ -859,13 +859,13 @@ $ git commit -m 'The initial commit of my project'
 
 Це створює новий вказівник на фіксацію, в якій ви зараз знаходитесь.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/testing_branch.png)
+![](./images/testing_branch.png)
 
 Звідки Git знає, на якій гілці ви зараз знаходитесь? Він зберігає особливий вказівник під назвою `HEAD`.
 У Git це вказівник на локальну гілку, на якій ви знаходитесь. В даному випадку, ви досі на гілці 
 `master`. Команда `git branch` тільки створює нову гілку — вона не переключає на цю гілку.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/HEAD.png)
+![](./images/HEAD.png)
 
 Ви легко можете це побачити за допомогою простої опції команди git log, що може показати куди вказують 
 вказівники гілок. Ця опція називається `--decorate`, також використаємо `--oneline` для короткого 
@@ -888,13 +888,13 @@ f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to 
 
 Це пересуває `HEAD`, щоб він вказував на гілку `testing`.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_testing.png)
+![](./images/head_testing.png)
 
 Давайте зробимо ще одну фіксацію:
 
 `$ git commit -am "Зробив зміни"`
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_testing_new_commit.png)
+![](./images/head_testing_new_commit.png)
 
 Це цікаво, бо тепер ваша гілка `testing` пересунулась уперед, а ваша гілка `master` досі вказує 
 на фіксацію, що й у момент виконання git checkout для переключення гілок. Повернімося назад 
@@ -902,7 +902,7 @@ f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to 
 
 `$ git checkout master`
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_master.png)
+![](./images/head_master.png)
 
 Ця команда зробила дві речі. Вона пересунула вказівник `HEAD` назад на гілку `master`, та повернула файли 
 у вашій робочій теці до стану знімку, на який вказує `master`. Це також означає, що якщо ви зараз зробите 
@@ -917,7 +917,7 @@ f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to 
 ізольовані в окремих гілках. Ви можете переключатись між цими гілками та злити їх, коли вони будуть 
 готові. І все це ви зробили за допомогою простих команд `branch`, `checkout` та `commit`.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/head_master_new_commit.png)
+![](./images/head_master_new_commit.png)
 
 Ви також можете легко це побачити за допомогою команди `git log`. Якщо ви виконаєте 
 `git log --oneline --decorate --graph --all`, вона надрукує історію ваших фіксацій, 
@@ -939,7 +939,7 @@ $ git log --oneline --decorate --graph --all
 
 Скажімо, ви працюєте над проектом і вже маєте кілька комітів у гілці master.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/master_branch.png)
+![](./images/master_branch.png)
 
 Тепер вирішили працювати над задачею, котра в системі вашої компанії зареєстрована як №53. 
 Щоб створити нову гілку для цієї задачі та одразу перейти на неї, виконайте команду `git checkout` 
@@ -954,14 +954,14 @@ Switched to a new branch "iss53"
 $ git branch iss53
 $ git checkout iss53
 ```
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/iss53_branch.png)
+![](./images/iss53_branch.png)
 
 Ви працюєте над змінами до сайту та комітите зміни. Таким чином ваша гілка `iss53` починає 
 рухається вперед, оскільки ви на неї раніше переключилися (тобто вказівник `HEAD` вказує на цю гілку):
 
 `$ git commit -a -m 'added a new footer [issue 53]'`
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/iss53_branch_new_commit.png)
+![](./images/iss53_branch_new_commit.png)
 
 Вам подзвонили та доповіли про проблему на сайті, якої потрібно якнайшвидше позбутися. 
 Завдяки Git, вам не потрібно відсилати це виправлення разом із змінами в `iss53`, також, 
@@ -995,7 +995,7 @@ $ git commit -a -m 'fixed the broken email address'
  1 file changed, 2 insertions(+)
 ```
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/hotfix_branch_new_commit.png)
+![](./images/hotfix_branch_new_commit.png)
 
 Тепер можете запускати тести, щоб впевнитися що зміна годиться і нарешті злити (`merge`) гілку 
 `hotfix` назад до `master` щоб викласти зміни на виробництво. Робиться це за допомогою команди 
@@ -1016,7 +1016,7 @@ Fast-forward
 
 Тепер ваша зміна міститься в знімку коміту, на який вказує master і ви можете викладати зміни.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/hotfix_master_merge.png)
+![](./images/hotfix_master_merge.png)
 
 Після того, як ваше супер важливе виправлення викладено, можна повернутися до роботи, яку було 
 відкладено через швидке виправлення. Але спочатку видалимо гілку `hotfix` — нам вона більше не потрібна, 
@@ -1035,7 +1035,7 @@ $ git commit -a -m 'finished the new footer [issue 53]'
 [iss53 ad82d7a] finished the new footer [issue 53]
 1 file changed, 1 insertion(+)
 ```
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/hotfix_deleted.png)
+![](./images/hotfix_deleted.png)
 
 ### Основи зливання
 
@@ -1057,13 +1057,13 @@ index.html |    1 +
 в яку ви зливаєте зміни, Git мусить трохи попрацювати. В цьому випадку Git робить просте триточкове 
 злиття, користуючись двома знімками, що вказують на гілки та третім знімком - їх спільним предком.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/iss53_merge.png)
+![](./images/iss53_merge.png)
 
 Замість того, щоб просто пересунути вказівник гілки вперед, Git створює новий знімок, що є результатом 
 3-точкового злиття, і автоматично створює новий коміт, що вказує на нього. Його називають комітом злиття 
 (merge commit) та його особливістю є те, що він має більше одного батьківського коміту.
 
-![](https://github.com/KrissAyRose/IPZ/blob/dmytro/images/imerge_commit.png)
+![](./images/imerge_commit.png)
 
 Варто зауважити, що Git сам визначає найбільш підходящого спільного нащадка, якого брати за основу зливання.
 
